@@ -1,6 +1,6 @@
 # AI-10X Cutom Vison demo
 
-Demos for AI-10X training and certification. It can be used by trainer or by attendees as homework. Goal is to understand how to programaticaly create, train and publish Custom Vison project.
+Demos for AI-10X training and certification. It can be used by trainer or by attendees as homework. Goal is to understand how to programaticaly create, train and publish Custom Vison project. We use [Python azure-cognitiveservices-vision-customvision](https://pypi.org/project/azure-cognitiveservices-vision-customvision/).
 
 # Preparation
 
@@ -8,8 +8,8 @@ Demos for AI-10X training and certification. It can be used by trainer or by att
 - Clone this repository.
   - ```git clone https://github.com/bechynsky/ai100demos.git```
 - Install Python libraries.
-  - ```pip install azure-cognitiveservices-vision-computervision```
-- Goto ```ai100demos``` folder.
+  - ```pip install azure-cognitiveservices-vision-customvision```
+- Goto ```ai100custom_vision_demo``` folder.
 - Run ```code .``` to open code editor to see code.
 - Run [new_cognitiveservices.ps1](new_cognitiveservices.ps1).
   - All information like endpoint and service key is stored in Environment variables. 
@@ -19,6 +19,10 @@ Demos for AI-10X training and certification. It can be used by trainer or by att
 - Download sample images
   - ```sh ./download_images.sh```
 - Run ```code .``` to open code editor to see code.
+
+# Demo recommendation
+
+After each step go to (https://www.customvision.ai/)[https://www.customvision.ai/] and show changes in portal.
 
 # Step 0 [cv_00_credentials.py](cv_00_credentials.py)
 
@@ -32,7 +36,17 @@ This file only reads requiried environment variables.
 
 # Step 2 [cv_02_train.py](cv_02_train.py)
 
-- Train model.
+- Train model. It usually takes 7-10 minutes. You will see output like this:
+
+```
+python ./cv_02_train.py 
+Project Garden Birds loaded.
+Training...
+Training status: Training
+...
+Training status: Training
+Training status: Completed
+```
 
 # Step 3 [cv_03_publish.py](cv_03_publish.py)
 
@@ -40,7 +54,43 @@ This file only reads requiried environment variables.
 
 # Step 4 [cv_04_test.py](cv_04_test.py)
 
-- Test model using online images
+- Test model using online images. You can change images in code. Outup example:
+
+```
+python ./cv_04_test.py
+
+Project: Garden Birds
+Iteration: Iteration 1
+https://upload.wikimedia.org/wikipedia/commons/5/57/WoodPecker_Pivert_in_59650_%282%29.JPG
+        picus_viridis: 99.37%
+        parus_major: 4.37%
+        pica_pica: 1.11%
+        passer_domesticus: 0.32%
+
+https://upload.wikimedia.org/wikipedia/commons/0/01/Un_passerotto_su_un_olivo_nella_primavera_2020_Uccellino.jpg
+        passer_domesticus: 96.61%
+        parus_major: 4.07%
+        pica_pica: 2.37%
+        picus_viridis: 1.30%
+
+https://upload.wikimedia.org/wikipedia/commons/b/b2/Pica_1450098_Nevit.jpg
+        pica_pica: 99.55%
+        parus_major: 3.26%
+        picus_viridis: 2.44%
+        passer_domesticus: 1.45%
+
+https://upload.wikimedia.org/wikipedia/commons/4/43/Kohlmeise_%2823%29_%2834632808830%29.jpg
+        parus_major: 96.34%
+        picus_viridis: 5.78%
+        pica_pica: 1.33%
+        passer_domesticus: 0.46%
+
+https://upload.wikimedia.org/wikipedia/commons/4/42/Merel_%28Turdus_merula%29.jpg
+        passer_domesticus: 74.27%
+        pica_pica: 13.87%
+        picus_viridis: 7.53%
+        parus_major: 2.71%
+```
 
 # Credits
 
