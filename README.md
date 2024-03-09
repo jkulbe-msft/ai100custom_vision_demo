@@ -1,6 +1,6 @@
-# AI-10X Cutom Vison demo
+# AI-10X Custom Vison demo
 
-Demos for AI-10X training and certification. It can be used by trainer or by attendees as homework. Goal is to understand how to programaticaly create, train and publish Custom Vison project. We use [Python azure-cognitiveservices-vision-customvision](https://pypi.org/project/azure-cognitiveservices-vision-customvision/).
+Goal is to understand how to programmatically create, train and publish Custom Vison project. It can be used as demo during training or preparation to present Custom Vision as ready to use example. We use [Python azure-cognitiveservices-vision-customvision](https://pypi.org/project/azure-cognitiveservices-vision-customvision/).
 
 # Preparation
 
@@ -22,7 +22,7 @@ Demos for AI-10X training and certification. It can be used by trainer or by att
 
 # Demo recommendation
 
-After each step go to (https://www.customvision.ai/)[https://www.customvision.ai/] and show changes in portal.
+After each step go to [https://www.customvision.ai/](https://www.customvision.ai/) and show changes in portal.
 
 # Step 0 [cv_00_credentials.py](cv_00_credentials.py)
 
